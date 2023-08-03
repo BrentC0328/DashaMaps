@@ -46,8 +46,22 @@ public class MyLinkedList {
         return null;
     }
 
-    public void delete(String key){
-        
+    public Integer delete(String key){
+
+        MyNode currentNode = head.getNext();
+        MyNode previousNode = head;
+        String keyCheck = currentNode.getData().getKey();
+
+        while(currentNode != null && !keyCheck.equals(key)){
+            previousNode = currentNode;
+            currentNode = currentNode.getNext();
+        }
+        if (currentNode == null){
+            return null;
+        }
+        previousNode.setNext(currentNode.getNext());
+
+        return currentNode.getData().getValue();
 
     }
 

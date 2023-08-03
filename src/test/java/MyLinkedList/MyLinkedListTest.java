@@ -55,4 +55,18 @@ public class MyLinkedListTest {
         Assert.assertEquals(expectedNode, actual);
     }
 
+    @Test
+    public void deleteTest(){
+        MyLinkedList listy = new MyLinkedList("Manny");
+        String expectedKey = "Brent";
+        Integer expectedValue = 6;
+        MyNode expectedNode = new MyNode("Brent", 6);
+
+
+        listy.add(expectedKey, expectedValue);
+        Integer actual = listy.delete("Brent");
+
+        Assert.assertEquals(expectedValue, actual);
+    }
+
 }
