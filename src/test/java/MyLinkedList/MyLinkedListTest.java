@@ -39,4 +39,20 @@ public class MyLinkedListTest {
 
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void getTest(){
+        MyLinkedList listy = new MyLinkedList("Manny");
+        String expectedKey = "Brent";
+        Integer expectedValue = 6;
+        MyNode expectedNode = new MyNode("Brent", 6);
+
+
+        listy.add(expectedKey, expectedValue);
+
+        MyNode actual = listy.get("Brent");
+
+        Assert.assertEquals(expectedNode, actual);
+    }
+
 }

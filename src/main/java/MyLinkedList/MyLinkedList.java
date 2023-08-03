@@ -31,7 +31,23 @@ public class MyLinkedList {
         }
         return counter;
     }
+
+    public MyNode get(String key){
+        MyNode currentNode = head;
+
+        while(currentNode != null){
+            String keyCheck = currentNode.getData().getKey();
+            if(keyCheck.equals(key)){
+                return currentNode;
+            }
+            currentNode = currentNode.getNext();
+        }
+
+        return null;
+    }
+
     public void delete(String key){
+        
 
     }
 
