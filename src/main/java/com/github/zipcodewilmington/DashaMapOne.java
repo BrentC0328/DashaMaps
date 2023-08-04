@@ -1,5 +1,7 @@
 package com.github.zipcodewilmington;
 
+import MyLinkedList.MyNode;
+
 public class DashaMapOne extends DashaMap{
 
     public DashaMapOne(){
@@ -18,6 +20,21 @@ public class DashaMapOne extends DashaMap{
         int keyHashIndex = getBucketIndex(keyHash);
         doorDash[keyHashIndex].add(key, value);
     }
+
+    public Integer get(String key){
+        String keyHash = hashFunctionOne(key);
+        int keyHashIndex = getBucketIndex(keyHash);
+       MyNode result = doorDash[keyHashIndex].get(key);
+       return result.getData().getValue();
+    }
+
+    public Integer delete(String key){
+        String keyHash = hashFunctionOne(key);
+        int keyHashIndex = getBucketIndex(keyHash);
+        return doorDash[keyHashIndex].delete(key);
+    }
+
+
 
 
 }
