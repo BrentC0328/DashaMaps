@@ -67,6 +67,12 @@ public class MyLinkedList {
 
     private void addToEnd(MyNode currentNode, MyNode n){
 
+
+    }
+
+    public Boolean isEmpty(){
+        return head.getNext() == null;
+
     }
 
 
